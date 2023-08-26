@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../theme';
 import React from 'react';
-import Issue from './Issue';
+import Issue from './IssueTable';
 
 function App() {
   return (
