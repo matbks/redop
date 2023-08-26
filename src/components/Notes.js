@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 
-function Notes() {
-  const [notes, setNotes] = useState([]);
-
-  const addNote = (note) => {
-    setNotes([...notes, note]);
-  };
-
+function Notes({ notes }) {
   return (
-    <div>
-      <h3>Notas</h3>
-      {notes.map((note, index) => (
-        <p key={index}>{note}</p>
+    <List>
+      {notes.map(note => (
+        <ListItem key={note.id}>
+          <ListItemText primary={note.content} />
+        </ListItem>
       ))}
-      <button onClick={() => addNote('Nova Nota')}>Adicionar Nota</button>
-    </div>
+    </List>
   );
 }
 
